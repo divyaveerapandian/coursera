@@ -28,10 +28,10 @@
   function ShoppingListCheckOffService() {
     var service = this;
     var itemsToBuyList =[{name: "pizza",quantity: "1"},
-                         {name: "chocolates",quantity: "30 packets"},
-                         {name: "Orange juice",quantity: "5 bottles"},
-                         {name: "rusk",quantity: "10 packets"},
-                         {name: "cookies",quantity: "10 packets"}
+                         {name: "chocolates",quantity: "30"},
+                         {name: "Orange",quantity: "5"},
+                         {name: "rusk",quantity: "10"},
+                         {name: "cookies",quantity: "10"}
                        ];
     var itemsBoughtList=[];
 
