@@ -1,0 +1,10 @@
+<h3>{{directiveList.title}}</h3>
+<ol>
+  <li ng-repeat="item in directiveList.list.items">
+    <span list-item-description>  </span>
+    <button type="button" ng-click="directiveList.list.removeItem($index);">Remove Item</button>
+  </li>
+</ol>
+<div ng-if="directiveList.checkCookiesInList()" style="color:red;">WARNING! WARNING! COOKIES DETECTED..
+
+</div>

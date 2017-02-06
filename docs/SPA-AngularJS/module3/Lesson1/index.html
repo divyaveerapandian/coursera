@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="shoppingAndMenuApp">
+  <head>
+    <meta charset="utf-8">
+    <title>$q-promises and $http</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <h1>$q-promises and $http service-Try Example</h1>
+    <h3>Shopping List with Promise and $q Service</h3>
+    <h4>Shopping List</h4>
+    <div ng-controller="ShoppingListController as list">
+      <input type="text" ng-model="list.itemName" placeholder="Item Name">
+      <input type="text" ng-model="list.itemQuantity" placeholder="Item Quantity">Boxes
+      <button type="button" ng-click="list.addItem();">Buy</button>
+      <ol>
+        <li ng-repeat="item in list.items">
+          {{item.quantity+ " boxes of "+item.name}}
+          <button type="button" ng-click="list.removeItem($index);">Remove Item</button>
+        </li>
+      </ol>
+    </div>
+
+<hr>
+    <div ng-controller="MenuCategoriesController as menu">
+      <h3>$http Service</h3>
+      <h4>Category List</h4>
+      <ol>
+        <li ng-repeat="category in menu.categories">
+       (<a href="" ng-click="menu.logMenuItems(category.short_name);">{{category.short_name}} </a>) {{category.name}}
+        </li>
+      </ol>
+
+      <div>
+        <div ng-repeat="value in menu.singleCategory">
+          {{value.short_name}}   {{value.name}}
+        </div>
+        <ol>
+          <li ng-repeat="item in menu.singleCategory.menu_items">
+            {{item.id}}    -    {{item.short_name}}   -    {{item.name}}    -    {{item.description}}
+          </li>
+        </ol>
+      </div>
+    </div>
+
+  </body>
+</html>
