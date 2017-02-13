@@ -1,0 +1,9 @@
+<a ui-sref="home"> Home </a>  < Categories
+<h2>Menu Categories </h2>
+<p id="subTitle">
+  [Click any menu category and items will be displayed below ]
+</p>
+<div ng-repeat = "category in $ctrl.categories"
+    ui-sref="categories.items({itemShortName:category.short_name})">
+    ( {{category.short_name}} ) {{category.name}}
+</div>
