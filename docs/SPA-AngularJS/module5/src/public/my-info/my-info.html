@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Registered Information</h1><br>
+  <div ng-show="{{myInfoCtrl.user}}" class="row">
+    <div class="col-sm-2 label">  FirstName </div>
+    <div class="col-sm-10 labelValue"> {{myInfoCtrl.user.firstname}}</div>
+
+    <div class="col-sm-2 label">  LastName </div>
+    <div class="col-sm-10 labelValue"> {{myInfoCtrl.user.lastname}}</div>
+
+    <div class="col-sm-2 label">  Email </div>
+    <div class="col-sm-10 labelValue"> {{myInfoCtrl.user.email}}</div>
+
+    <div class="col-sm-2 label">  Phone </div>
+    <div class="col-sm-10 labelValue"> {{myInfoCtrl.user.phone}}</div>
+
+    <div ng-show="myInfoCtrl.user.itemExistence">
+      <div class="col-sm-2 label">  Favorite Dish  </div>
+      <div class="col-sm-10 labelValue"><span>Name : </span>{{myInfoCtrl.user.item.name}}<br>
+                                        <span>Description : </span>  {{myInfoCtrl.user.item.description}}<br>
+                                        <span>Image : </span> <img width="200" height="200" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.user.item.short_name}}.jpg" alt="{{myInfoCtrl.user.item.name}}">
+
+      </div>
+    </div>
+    <div ng-hide="myInfoCtrl.user.itemExistence">
+      <div class="col-sm-2 label">  Favorite Dish  </div>
+      <div class="col-sm-10 labelValue"> {{myInfoCtrl.user.errorResponse.message}}</div>
+    </div>
+  </div>
+  <p ng-hide = "{{myInfoCtrl.user}}">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </p>
+</div>
